@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+	<title>IAB Spain</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+</head>
+<body>
+<header>
+	<table class="tbMenu" cellspacing="0" cellpadding="0">
+	<tr>
+		<td style="width:20%;padding-left:5px;"> <a href="/"><img src="img/logo.jpg" alt=""></a></td>
+		<td style="text-align:center;padding-top:5px" colspan="3">
+			<table class="tbMenuA" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><a class="menuTitles" href="/category/noticias">NOTICIAS</a></td>
+				<td><a class="menuTitles" href="/eventos">EVENTOS</a></td>
+				<td><a class="menuTitles" href="/asociados">ASOCIATE</a></td>
+				<td><a class="btnSearch"><img onclick="$('#buscador').slideToggle();" width="21" height="23" src="img/btnSearch.png" alt=""></a></td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+	<div id="buscador" class="buscador limpia oculto">
+		<form action="/search.php" id="BuscarForm" method="post">
+			<input type="text" name="textBuscar" id="textBuscar">
+			<input type="button" id="btnBuscar" value="Buscar" class="button">
+		</form>
+		<p style="padding-left:5px">* Busque cualquier palabra que pueda contener una noticia.</p>
+	</div>
+</header>
+<section class="content"> 
+	<p class="noticiasTitle">Asociados</p> 
+	<div class="limpia"></div> 
+	<div style="padding:5px 0 0 5px;margin:0;"> 
+		<p class="tituloWelcome">Beneficios</p> 
+		<span class="titleSection cNaranjaBase">Principales Servicios para los Socios</span>
+	</div> 
+	<div class="divAso">
+		<p class="asoAnte">Investigación</p>
+		<ul> 
+			<li>Estudio de inversión IAB-PWC</li> 
+			<li>Otros estudios : Mobile Marketing, Redes Sociales, eficacia de formatos, eyetracking...</li>
+		</ul>
+		<p class="asoAnte">Formación</p>
+		<ul>
+			<li>Desayunos temáticos</li>
+			<li>IAB University</li>
+			<li>Master de Publicidad Interactiva IAB-UCM</li>
+			<li>Curso superior en Medios Sociales IAB-wholeSOCIAL</li>
+			<li>Curso superior en Medios Sociales IAB-wholeSOCIAL INTENSE (Barcelona)</li>
+			<li>Curso superior en Mobile Business</li> 
+			<li>Curso Domina WordPress</li> 
+		</ul> 
+		<p class="asoAnte">Marketing</p> 
+		<ul>
+			<li>Comisiones de trabajo</li> 
+			<li>Guías y estándares</li> 
+		</ul>
+		<p class="asoAnte">Eventos</p>
+		<ul>
+			<li>Festival de Publicidad y Comunicación Digital Inspirational</li>
+			<li>Congreso de Regulación Digital</li> 
+			<li>Jornada de Vídeo Online</li>
+			<li>Jornada de Mobile Marketing</li> 
+			<li>Triangular Agencias-Anunciantes-Usuarios</li> 
+			<li>Festival EL SOL</li>
+			<li>Festival Interact Barcelona</li>
+		</ul>
+		<p class="asoAnte">Servicios jurídicos</p>
+		<ul> 
+			<li>Consultas jurídicas</li>
+			<li>Política activa de lobby</li>
+		</ul>
+		<p class="titleSection cNaranjaBase">¿Por qué ser Socio? </p>
+		<ul>
+			<li>Por el networking</li>
+			<li>Para recibir de primera mano, toda la información y las últimas tendencias de los principales actores del sector digital nacional e internacional.</li>
+			<li>Para ser protagonista de las decisiones que dibujan el futuro del sector, defendiendo sus intereses y los propios de la empresa.</li>
+			<li>Para dirigir las actividades de la Asociación a través de Working Groups, desde los cuales se lanzan al mercado documentos o recomendaciones útiles en la práctica diaria de la actividad.</li>
+			<li>Para demostrar la eficacia del medio en beneficio del sector y las empresas asociadas.</li>
+			<li>Para acceder de manera exclusiva a la Sección Restringida para socios, y conseguir todos los documentos y herramientas prácticas desarrolladas por IAB Spain.</li>
+			<li>Para beneficiarse de todos los servicios y proyectos marcados por IAB Spain.</li>
+			<li>Porque es el momento de los medios digitales y las empresas que apuestan por ellos.</li>
+		</ul>
+		<div style="width:100%;padding-bottom:50px;">
+			<div style="float:right;"> 
+				<a id="aAsociate" class="button pad5" title="ASÓCIATE">ASÓCIATE</a>
+				<div id="dAsociate" class="asociate oculto"> 
+					<form action="/include/backend.php" id="fForm" method="post">
+						<table class="tForm" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="campo">
+								<p class="txtCampo">
+					            	Nombre:<br> <input type="text" name="nombre" id="nombre" size="11">
+					            </p>
+					        </td>
+					        <td class="campo">
+					        	<p class="txtCampo">
+					            	Apellidos:<br> <input type="text" name="apellidos" id="apellidos" size="11">
+					            </p>
+					        </td>
+						</tr>
+						<tr>
+							<td class="campo"> 
+								<p class="txtCampo">
+					            	Nombre de la Empresa:<br><input type="text" name="nomEmpresa" id="nomEmpresa" size="11">
+					            </p>
+					        </td>
+					        <td class="campo">
+					        	<p class="txtCampo">
+					            	Correo Electronico:<br> <input type="text" name="email" id="email" size="11">
+					            </p>
+					        </td>
+						</tr>
+						<tr>
+							<td class="campo"> 
+								<p class="txtCampo">
+					            	Teléfono:<br> <input type="text" name="telefono" id="telefono" size="11">
+					            </p>
+					        </td>
+					    </tr>
+					    <tr>
+					    	<td colspan="2">
+					    		<p class="txtCabFormGray">* Todos los campos obligatorios.</p>
+					    	</td>
+					    </tr>
+						</table>
+						<p class="txtClausula center">
+							<input type="checkbox" name="acepto" id="acepto">Acepto las <a id="aClausula cNaranjaBase">condiciones</a>
+							<div id="dClausula" class="oculto"> 
+								<p class="clausulaTxtCuerpo">
+									Sus datos pasarán a formar parte de un fichero del que es responsable INTERACTIVE ADVERTISING BUREAU (IAB-Spain), con la finalidad de remitir información acerca de la Asociación, sus servicios y futuros eventos. Los usuarios cuyos datos sean objeto de tratamiento podrán ejercer gratuitamente los derechos de acceso, rectificación, cancelación y oposición de sus datos en los términos especificados en la Ley Orgánica 15/1999 de Protección de Datos de Carácter Personal, conforme al procedimiento legalmente establecido.
+								</p>
+							</div>
+						</p>
+						<p id="txtClausula" class="txtError oculto">Las condiciones deben ser aceptadas</p>
+						<div class="center pad5">
+							<a id="bEnviar" class="button" title="CERRAR">ENVIAR</a>
+							<a id="bAsoClose" class="button" title="CERRAR">CERRAR</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+	</div>
+</section>
+<footer style="position:relative;">
+	<div>
+		<p class="footer">
+        	IAB © 2014 | 
+        	<a id="aPrivacidad" class="enlace">Política de Privacidad</a> | 
+        	<a class="enlace" href="http://www.iabspain.net" target="_blank">Versión Clásica</a>
+        </p>
+    </div>
+
+	<div id="dPrivacidad" class="privacidad oculto"> 
+		<p style="font-weight:bold;">Política de Privacidad</p>
+		<p> 
+			Sus datos pasarán a formar parte de un fichero del que es responsable INTERACTIVE ADVERTISING BUREAU 
+			(IAB-Spain), con la finalidad de remitir información acerca de la Asociación, sus servicios y futuros eventos. 
+			Los usuarios cuyos datos sean objeto de tratamiento podrán ejercer gratuitamente los derechos de acceso, 
+			rectificación, cancelación y oposición de sus datos en los términos especificados en la Ley Orgánica 15/1999 
+			de Protección de Datos de Carácter Personal, conforme al procedimiento legalmente establecido.
+        </p>
+        <div class="center" style="margin-bottom:10px;">
+        	<a id="bAsoClose" class="button" title="CERRAR">CERRAR</a>
+        </div>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/funciones.js"></script>
+</body>
+</html>
