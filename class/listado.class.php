@@ -15,15 +15,13 @@ class Listado{
     function getData()
     {
     	include("simple_html_dom.php");
-		include("include/funciones.inc.php");
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $feed[$this->seccion]);
+        curl_setopt($ch, CURLOPT_URL, "http://www.iabspain.net/feed/");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $file = curl_exec($ch);
         curl_close($ch);
     
         $xml = simplexml_load_string($file);
-        $namespaces = $xml->getNamespaces(true);
 		
         $aDatos = array();
         
@@ -35,52 +33,15 @@ class Listado{
 			/* articulo */
             if (!empty($this->id))
             {
-                $id = "http://www.vanidad.es/" . $this->seccion . "/" . $this->id;
+                $id = "http://www.iabspain.net/" . $this->seccion . "/" . $this->id;
                 if ($id == $item->link)
                 {
                     $encontrado = true;
-                    $content = $item->children($namespaces['content']); 
-        			$cuerpo = $content->encoded;
-                    $cuerpo = str_replace("style","class",$cuerpo);
-        			
-        			$html = str_get_html("<html><body>".$cuerpo."</body></html>");
-        			
-        			$container = $html->find('img',0);
-        		
-        	        $img = (!empty($container)?$container->src:"");
-                    $recorte = "";
-        			
-        			if(!empty($img))
-        			{
-                        $recorte = $img;
-        			}
-        			else
-        			{
-        				$patron = '/vimeo.com\/(\d+)">/';
-        				
-        				if(preg_match($patron,$cuerpo,$a) == 1)
-        				{
-        					$recorte = $a[1];
-
-        					$video_xml = "http://vimeo.com/api/v2/video/".$a[1].".xml";
-        					
-        					$ch = curl_init();
-        			        curl_setopt($ch, CURLOPT_URL, $video_xml);
-        			        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        			        $file = curl_exec($ch);
-        			        curl_close($ch);
-        			    
-        			        $xml = simplexml_load_string($file);
-        					
-        					$recorte = $xml->video->thumbnail_large;
-        					
-        				}
-        				else
-        					$recorte = "";
-        			}
-        			
-        			$entradilla = explode("<p>La entrada", $item->description);
-        			
+                    $cuerpo = $item->description;
+		            $html = str_get_html("<html><body>".$cuerpo."</body></html>");            
+		            $container = $html->find('img',0);        
+		            $img = (!empty($container)?$container->src:"");
+		            
         			list($inicio,$dia,$mes,$ano,$resto) = explode(" ", $item->pubDate);
         		
         			$fecha = $dia." ".$meses[$mes].", ".$ano;
@@ -88,58 +49,27 @@ class Listado{
                     $aDatos = array(
                             "titulo" => htmlentities($item->title, ENT_QUOTES, 'UTF-8'),
                             "fecha" => $fecha,
-                            "entradilla" => utf8_decode($entradilla[0]),
                             "imagen" => $img,
-                            "recorte" => $recorte,
-                            "cuerpo" => $cuerpo,
-                            "url" => $item->link
+                            "cuerpo" => $cuerpo
                             );
                 }
             }
             /* listado */
             else
             {
-                $content = $item->children($namespaces['content']); 
-                $cuerpo = $content->encoded;
-                $cuerpo = str_replace("style","class",$cuerpo);
-                
-                $html = str_get_html("<html><body>".$cuerpo."</body></html>");
-                
-                $container = $html->find('img',0);
-            
-                $img = (!empty($container)?$container->src:"");
-                $recorte = "";
-                
-                if(!empty($img))
-                {
-                    $recorte = $img;
-                }
-                else
-                {
-                    $patron = '/vimeo.com\/(\d+)">/';
-                    
-                    if(preg_match($patron,$cuerpo,$a) == 1)
-                    {
-                        $recorte = $a[1];
-
-                        $video_xml = "http://vimeo.com/api/v2/video/".$a[1].".xml";
-                        
-                        $ch = curl_init();
-                        curl_setopt($ch, CURLOPT_URL, $video_xml);
-                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                        $file = curl_exec($ch);
-                        curl_close($ch);
-                    
-                        $xml = simplexml_load_string($file);
-                        
-                        $recorte = $xml->video->thumbnail_large;
-                        
-                    }
-                    else
-                        $recorte = "";
-                }
-                
-                $entradilla = explode("<p>La entrada", $item->description);
+                $cuerpo = $item->description;
+	            $html = str_get_html("<html><body>".$cuerpo."</body></html>");            
+	            $container = $html->find('img',0);        
+	            $img = (!empty($container)?$container->src:"");
+	            
+	            $entradilla = substr($html->plaintext,0,200);
+	            
+	            $aDatos[] = array(
+	                    "titulo" => htmlentities($item->title, ENT_QUOTES, 'UTF-8'),
+	                    "enlace" => str_replace("http://www.iabspain.net","", $item->link),
+	                    "entradilla" => htmlentities($entradilla, ENT_QUOTES, 'UTF-8'),
+	                    "imagen" => $img
+	                    );
                 
                 list($inicio,$dia,$mes,$ano,$resto) = explode(" ", $item->pubDate);
             
@@ -150,10 +80,7 @@ class Listado{
                         "enlace" => str_replace("http://www.vanidad.es","", $item->link),
                         "fecha" => $fecha,
                         "entradilla" => utf8_decode($entradilla[0]),
-                        "imagen" => $img,
-                        "recorte" => $recorte,
-                        "cuerpo" =>$cuerpo,
-                        "url" => $item->link
+                        "imagen" => $img
                         );
             }
 	    }
@@ -174,20 +101,6 @@ class Listado{
         $tpl = (!empty($this->id)?"articulo.tpl":"listado.tpl");
         
         return $tpl;
-    }
-    
-    function getTagPubli()
-    {
-        $tag = "";
-        switch ($this->seccion)
-        {
-        	case "portada": $tag = "55174/413268"; break;
-        	/*case "portada": $tag = ""; break;
-        	case "portada": $tag = ""; break;*/
-            default: $tag = "55174/498659"; break;
-        	
-        }
-        return $tag;
-    }
+    }    
 }
 ?>

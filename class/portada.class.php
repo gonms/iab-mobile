@@ -29,12 +29,12 @@ class Portada{
             $container = $html->find('img',0);        
             $img = (!empty($container)?$container->src:"");
             
-            $entradilla = substr($html->plaintext,0,100);
+            $entradilla = substr($html->plaintext,0,200);
             
             $aDatos[] = array(
                     "titulo" => htmlentities($item->title, ENT_QUOTES, 'UTF-8'),
                     "enlace" => str_replace("http://www.iabspain.net","", $item->link),
-                    "entradilla" => utf8_decode($entradilla),
+                    "entradilla" => htmlentities($entradilla, ENT_QUOTES, 'UTF-8'),
                     "imagen" => $img
                     );
             $pos ++;

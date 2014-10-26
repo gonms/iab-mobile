@@ -1,4 +1,25 @@
-
+<?php /* Smarty version Smarty-3.1.15, created on 2014-10-24 12:48:19
+         compiled from "templates/header.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1369202333544a02c2624893-09886887%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'be439f82a4dbec61746f62a0df07c19a7eecd966' => 
+    array (
+      0 => 'templates/header.tpl',
+      1 => 1414147695,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1369202333544a02c2624893-09886887',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_544a02c2627fc8_70795006',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_544a02c2627fc8_70795006')) {function content_544a02c2627fc8_70795006($_smarty_tpl) {?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,4 +52,4 @@
 		</form>
 		<p style="padding-left:5px">* Busque cualquier palabra que pueda contener una noticia.</p>
 	</div>
-</header>
+</header><?php }} ?>
