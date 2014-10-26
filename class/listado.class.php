@@ -64,22 +64,15 @@ class Listado{
 	            
 	            $entradilla = substr($html->plaintext,0,200);
 	            
-	            $aDatos[] = array(
-	                    "titulo" => htmlentities($item->title, ENT_QUOTES, 'UTF-8'),
-	                    "enlace" => str_replace("http://www.iabspain.net","", $item->link),
-	                    "entradilla" => htmlentities($entradilla, ENT_QUOTES, 'UTF-8'),
-	                    "imagen" => $img
-	                    );
-                
                 list($inicio,$dia,$mes,$ano,$resto) = explode(" ", $item->pubDate);
             
-                $fecha = $dia." ".$meses[$mes].", ".$ano;
+                $fecha = $dia." ".$mes.", ".$ano;
                 
                 $aDatos[] = array(
                         "titulo" => htmlentities($item->title, ENT_QUOTES, 'UTF-8'),
-                        "enlace" => str_replace("http://www.vanidad.es","", $item->link),
+                        "enlace" => str_replace("http://www.iabspain.net","", $item->link),
                         "fecha" => $fecha,
-                        "entradilla" => utf8_decode($entradilla[0]),
+                        "entradilla" => htmlentities($entradilla, ENT_QUOTES, 'UTF-8'),
                         "imagen" => $img
                         );
             }

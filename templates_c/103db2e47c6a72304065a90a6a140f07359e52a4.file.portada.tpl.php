@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-10-24 13:10:11
+<?php /* Smarty version Smarty-3.1.15, created on 2014-10-26 20:32:51
          compiled from "templates/portada.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1913759332544a02c25feca8-37163335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '103db2e47c6a72304065a90a6a140f07359e52a4' => 
     array (
       0 => 'templates/portada.tpl',
-      1 => 1414149007,
+      1 => 1414351420,
       2 => 'file',
     ),
   ),
@@ -28,10 +28,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_544a02c2620318_83840805')) {function content_544a02c2620318_83840805($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
-<section style="margin:2%">
-	<h1 style="margin:4% 0;font-size:1.5em;color:#555555">Bienvenidos a <span style="color:#FEC627;">iab</span></h1>
+<section>
+	<h1 class="seccion-portada">Bienvenidos a <span>iab</span></h1>
 	<div>
-		<img src="http://www.iabspain.net/wp-content/uploads/2012/02/logo2-300x272-159x162.png" style="width:35%;float:left;margin-right:2%;"/>
+		<img src="http://www.iabspain.net/wp-content/uploads/2012/02/logo2-300x272-159x162.png" class="logo" />
 		<p><strong>Asociación que representa al sector de la publicidad en medios digitales en España.</strong> 
 			 					Esta organización engloba a los diferentes actores del panorama publicitario online:
 								agencias de medios, agencias creativas, anunciantes, soportes, redes, empresas de 
@@ -41,23 +41,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	
 	<?php echo $_smarty_tpl->tpl_vars['calendario']->value;?>
 
-	<h2>Últimas noticias</h2>
-	<ul>
+	<h2>Últimas Noticias</h2>
+	<ul class="noticias-portada">
 	<?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['noticias']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->_loop = true;
 ?>
-	<li style="border-bottom:1px solid #fec627;padding-bottom:5px;">
+	<li>
 		<?php if ($_smarty_tpl->tpl_vars['item']->value['imagen']!='') {?>
 		<img src="<?php echo $_smarty_tpl->tpl_vars['item']->value['imagen'];?>
-" style="float:left;width:35%;margin-right:2%;" />
+" />
 		<?php }?>
 		<h3><strong><?php echo $_smarty_tpl->tpl_vars['item']->value['titulo'];?>
 </strong></h3>
 		<p><?php echo $_smarty_tpl->tpl_vars['item']->value['entradilla'];?>
 </p>
-		<a class="button" style="display:block;width:20%;clear:both;" href="<?php echo $_smarty_tpl->tpl_vars['item']->value['enlace'];?>
+		<a class="button" href="<?php echo $_smarty_tpl->tpl_vars['item']->value['enlace'];?>
 ">LEER MÁS</a>
 	</li>
 	<?php } ?>
