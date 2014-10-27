@@ -33,25 +33,21 @@ class Listado{
 			/* articulo */
             if (!empty($this->id))
             {
-                $id = "http://www.iabspain.net/" . $this->seccion . "/" . $this->id;
+                $id = "http://www.iabspain.net/noticias/" . $this->id;
                 if ($id == $item->link)
                 {
                     $encontrado = true;
-                    $cuerpo = $item->description;
-		            $html = str_get_html("<html><body>".$cuerpo."</body></html>");            
-		            $container = $html->find('img',0);        
-		            $img = (!empty($container)?$container->src:"");
-		            
+                    $cuerpo = str_replace("float:left;","",$item->description);
         			list($inicio,$dia,$mes,$ano,$resto) = explode(" ", $item->pubDate);
         		
-        			$fecha = $dia." ".$meses[$mes].", ".$ano;
+        			$fecha = $dia." ".$mes." ".$ano;
         			
                     $aDatos = array(
                             "titulo" => htmlentities($item->title, ENT_QUOTES, 'UTF-8'),
                             "fecha" => $fecha,
-                            "imagen" => $img,
                             "cuerpo" => $cuerpo
                             );
+                   	break;
                 }
             }
             /* listado */
@@ -66,7 +62,7 @@ class Listado{
 	            
                 list($inicio,$dia,$mes,$ano,$resto) = explode(" ", $item->pubDate);
             
-                $fecha = $dia." ".$mes.", ".$ano;
+                $fecha = $dia." ".$mes." ".$ano;
                 
                 $aDatos[] = array(
                         "titulo" => htmlentities($item->title, ENT_QUOTES, 'UTF-8'),

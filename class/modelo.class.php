@@ -42,7 +42,7 @@ class Modelo{
                 $item2 = new Eventos();
                 $aDatos[1] = $item2->getCalendar();
                 break;
-            default: 
+            case "noticias": 
                 require_once("listado.class.php");
                 $item = new Listado($this->seccion, $this->id);
                 $aDatos = $item->getData();

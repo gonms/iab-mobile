@@ -20,8 +20,8 @@
 		<img src="{$item.imagen}" />
 		{/if}
 		<h3><strong>{$item.titulo}</strong></h3>
-		<p>{$item.entradilla}</p>
-		<a class="button" href="{$item.enlace}">LEER MÁS</a>
+		<p>{$item.entradilla}...</p>
+		<a class="button" href="/iab-mobile{$item.enlace}">LEER MÁS</a>
 	</li>
 	{/foreach}
 	</ul>

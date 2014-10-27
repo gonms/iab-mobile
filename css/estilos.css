@@ -8,17 +8,23 @@ a{cursor:pointer;color:#FEC627;text-decoration:none}
 .oculto{display:none}
 .center{text-align:center}
 .pad5{padding:5px}
-section {margin:2%;}
-.button {display:block;width:35%;clear:both;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;padding:8px 20px 8px 20px;background:#302426;color:white;vertical-align:middle;text-align:center;text-decoration:none;font-weight:bold;font-size:10px}
+section,header,footer {margin:2%;}
+.button {display:inline-block;width:35%;clear:both;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;padding:8px 20px 8px 20px;background:#302426;color:white;vertical-align:middle;text-align:center;text-decoration:none;font-weight:bold;font-size:10px}
 .button:hover{background:#FF9900}
+.footer{width:100%;text-align:center;font-size:0.8em;padding:0;margin:2% 0;color:#777}
+.enlace{font-size:1em;color:#FEC627}
 
 
 /*MENU*/
-.tbMenu{text-transform:uppercase;color:#555555;padding-bottom:10px}
-.menuTitles{padding:5px;color:#555555;font-size:0.8em}
-.menuTitles:hover{background-color:#FEC627}
-.footer{width:100%;text-align:center;font-size:0.8em;padding:0;margin:2% 0;color:#777}
-.enlace{font-size:1em;color:#FEC627}
+ul.nav {line-height:54px;}
+ul.nav li {display:inline-block;vertical-align:middle;height:54px;line-height:54px;}
+ul.nav li.borde {border-right:1px dotted #555;margin:10px 0;height:34px;line-height:34px;}
+ul.nav li a {padding:5px;color:#555555;font-size:0.8em}
+ul.nav li a:hover {background-color:#FEC627}
+.buscador input[type="button"]{background:#000000;border:0 none;border-radius:8px;cursor:pointer;float:right;height:24px;margin-right:10px;padding:0 22px;color:white;font-size:14px;font-style:normal;font-weight:bold;text-transform:uppercase}
+.buscador p{font-style:italic;font-size:10px}
+.buscador input[type="text"]{width:60%}
+.buscador form{margin-bottom:8px;margin-top:10px;overflow:hidden}
 
 /*CALENDARIO*/
 table {
@@ -31,11 +37,11 @@ border-color: gray;
 .tdDisabled{padding:5px;border:1px solid #EEEEEE}
 .tdNormal{padding:5px;border:1px solid #000000;text-align:center;font-weight:bold;font-size:1.2em;color:#FEC627}
 .tdHoy{background-color:#CCCCCC;border:1px solid #000000;text-align:center;font-weight:bold;font-size:1.2em}
-.mes{text-align:center;font-size:1.5em;font-weight:bold;padding:5px 0;color:#FEC627;margin-top:5%;}
+.mes{text-align:center;font-size:1.5em;padding:5px 0;color:#FEC627;margin-top:5%;}
 .diasemana{padding:5px;color:#FFFFFF;background-color:#555;text-align:center}
 
 /*PORTADA*/
-.seccion-portada {margin:4% 0;font-size:1.5em;color:#555555}
+.seccion-portada {margin:4% 0;font-size:1.7em;color:#555555}
 .seccion-portada span {color:#FEC627;}
 h2 {font-size: 1.5em;color:#555555;font-weight:bold;margin-top:5%;margin-bottom:1%;}
 ul.noticias-portada li {border-bottom:1px solid #fec627;padding-bottom:5px;margin-bottom:10px;}
@@ -43,25 +49,28 @@ ul.noticias-portada li h3 {color:#555555;margin-bottom:2%;}
 
 /*NOTICIAS*/
 .seccion-noticias {font-size:2em;color:#FFFFFF;margin:0;padding:10px 0 5px 5px;background-color:#FEC627;}
-ul.noticias li {border-bottom:1px solid #fec627;padding-bottom:10px;margin-bottom:10px;}
-ul.noticias li h2 {font-size:1.5em;color:#555555;padding:4% 0 1% 0;font-weight:normal;}
-ul.noticias li p {font-size:0.7em;color:#777777;margin-bottom:1%;}
-ul.noticias li h3 {color:#555555;font-size:1em;}
-ul.noticias li img, ul.noticias-portada li img, .logo {float:left;width:35%;margin-right:2%;}
+ul.noticias > li {border-bottom:1px solid #fec627;padding-bottom:10px;margin-bottom:10px;}
+ul.noticias > li > h2 {font-size:1.5em;color:#555555;padding:4% 0 1% 0;font-weight:normal;}
+ul.noticias > li > p, p.fecha {font-size:0.7em;color:#777777;margin-bottom:1%;}
+ul.noticias > li > h3 {color:#555555;font-size:1em;}
+ul.noticias > li > img, ul.noticias-portada > li > img, .logo {float:left;width:35%;margin-right:2%;}
+h2.titulo {font-size:1.5em;color:#555555;padding:4% 0 1% 0;font-weight:normal;margin:0;}
+div.cuerpo p, div.cuerpo ul, div.cuerpo div {margin:1% 0;}
 
-
-.divAso{padding:5px;margin:0;color:#555555;font-size:small;position:relative}
-.asoAnte{font-weight:bold;padding:5px 0 0 3px}
-.asociate{color:#777;font-size:small;font-family:Arial;position:absolute;bottom:0;left:2px;background-color:#FFF4D3;border:1px solid #FEC627;margin:5px;padding:5px}
-.titleSection{font-size:medium}
-.campo{width:50%}
-.txtCampo{color:#06447D;font-size:small;font-weight:bold;padding-left:5px}
-.txtClausula{padding:10px;font-size:small;color:#06447D;font-family:Arial}
+/*ASOCIATE*/
+.asociate{color:#777;font-family:Arial;background-color:#FFF4D3;border:1px solid #FEC627;margin:5px;padding:5px}
+h3.seccion{font-size:1.25em;color:#FEC627;margin:3% 0;}
+h4 {font-weight:bold;margin:1% 0;}
+ul.asociados {list-style-type:disc;}
+ul.asociados li {margin-left:10%;}
+label {display:block;color:#06447D;font-size:1em;font-weight:bold;padding:1% 0;}
+.texto-gris {font-size:0.8em;color:#777777;padding:1% 0;}
+.txtClausula{padding:10px;font-size:0.8em;color:#06447D;font-family:Arial}
 .txtError{text-align:center;padding:3px;color:#B40000;font-size:small;font-weight:bold}
 .clausulaTxtCuerpo{font-size:small;color:#555555;font-weight:normal;text-align:justify;padding-top:10px}
 .txtSubmitOk{font-size:medium;text-align:center;color:#555555}
-.banner{text-align:center;padding:5px}
 
+/*EVENTOS*/
 .selected{background-color:#FE9204;color:#FFFFFF}.selected:hover{background-color:#FEC627;}
 .divEventos{width:100%;color:#555555;font-size:small;padding:0;margin:0}
 .evento{padding:5px;margin:0}
@@ -75,18 +84,12 @@ ul.noticias li img, ul.noticias-portada li img, .logo {float:left;width:35%;marg
 .cNaranjaBase{color:#FEC627}
 .cNaranjaBase2{color:#FE9204}
 .cGrisBase{color:#302426}
-.btnSearch{padding:5px}
-.privacidad{color:#777;font-size:small;font-family:Arial;position:absolute;bottom:0;left:1px;background-color:#FFF4D3;border:1px solid #FEC627;margin:5px;padding:5px}
-.tLinks{width:100%;text-align:center;padding:0;margin:0}
-.searchform{margin:0;display:inline;border-radius:0 0 8px 8px;-moz-border-radius:0 0 8px 8px;-webkit-border-radius:0 0 8px 8px;background:#FEC627;padding:10px 10px 10px 3px;vertical-align:middle}
+.privacidad{color:#777;font-size:1em;font-family:Arial;position:absolute;bottom:0;left:0;background-color:#FFF4D3;border:1px solid #FEC627;margin:2%;padding:2%;}
+.privacidad p {padding:1% 0 0 0;}
+
 .searchsubmit{background:url(img/btnSearch.png) no-repeat;border:none;position:relative;top:0;right:0;cursor:pointer;width:21px;height:23px;vertical-align:middle}
 .contacto{background:#FEC627;padding:3px 3px 3px 3px;border-radius:0 0 10px 10px;-moz-border-radius:0 0 8px 8px;-webkit-border-radius:0 0 10px 10px;color:white;vertical-align:middle;font-size:small}
-.buscador input[type="button"]{background:#000000;border:0 none;border-radius:8px;cursor:pointer;float:right;height:24px;margin-right:10px;padding:0 22px;color:white;font-size:14px;font-style:normal;font-weight:bold;text-transform:uppercase}
-.buscador p{font-style:italic;font-size:10px}
-.buscador input[type="text"]{width:60%}
-.buscador form{margin-bottom:8px;margin-top:10px;overflow:hidden}
-.tbMenuA td{border-right:1px dotted #555}
-.tbMenuA td:last-of-type{border:none}
+
 #capa{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:12px;height:100%;left:0;position:fixed;text-align:center;margin-left:5%;top:-50px;width:100%;z-index:99999;overflow-y:scroll;overflow-x:hidden}
 #capa_interior{background-color:#FFFFFF;border:2px solid #F8A32C;border-radius:6px 6px 6px 6px;color:#000000;margin:80px auto 0;padding:15px;text-align:justify}
 

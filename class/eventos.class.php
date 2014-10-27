@@ -34,7 +34,7 @@ class Eventos{
 
 	     // Create the table tag opener and day headers
 	     $calendar = "<table class='tCalendario' cellpadding='2' cellspacing='3'>";
-	     $calendar .= "<caption class='mes'>$monthName $anio</caption>";
+	     $calendar .= "<caption class='mes'>Eventos $monthName $anio</caption>";
 	     $calendar .= "<tr>";
 
 	     // Create the calendar headers
