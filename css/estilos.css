@@ -93,3 +93,5 @@ label {display:block;color:#06447D;font-size:1em;font-weight:bold;padding:1% 0;}
 #capa{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:12px;height:100%;left:0;position:fixed;text-align:center;margin-left:5%;top:-50px;width:100%;z-index:99999;overflow-y:scroll;overflow-x:hidden}
 #capa_interior{background-color:#FFFFFF;border:2px solid #F8A32C;border-radius:6px 6px 6px 6px;color:#000000;margin:80px auto 0;padding:15px;text-align:justify}
 
+/*COOKIES*/
+#caja_abierta{	height:40px;bottom: 10px;position: fixed;z-index: 50000;text-align:center;-moz-border-radius: 6px 6px 6px 6px;-webkit-border-radius: 6px 6px 6px 6px;border-radius: 6px 6px 6px 6px;padding:15px;margin-left: auto; background-color: rgb(255, 199, 0);}

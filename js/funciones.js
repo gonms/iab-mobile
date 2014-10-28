@@ -10,10 +10,6 @@ jQuery.fn.ForceNumericOnly=function()
 };
 $(document).ready(function()
 {
-	if(localStorage.getItem("cookie")===null)
-		localStorage.setItem('cookie','');
-	var cookie=localStorage.getItem("cookie");
-	$("#dCookies").css("display",cookie);
 	$("#aPrivacidad").click(function()
 	{
 		$("#dPrivacidad").slideToggle("1000");
@@ -58,6 +54,8 @@ $(document).ready(function()
 			$('#BuscarForm').submit();
 		}
 	});
+
+	checkCookie();
 });
 
 function makeday(day,month,year)
@@ -162,7 +160,38 @@ function compruebaForm(pagina)
 	}
 }
 
-function displayCookie(valor)
-{
-	localStorage.setItem('cookie',valor);
+function setCookie(c_name,value,exdays){
+	var exdate=new Date();
+	exdate.setDate(exdate.getDate() + exdays);
+	var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+	document.cookie=c_name + "=" + c_value;
+}
+function getCookie(c_name){
+	var c_value = document.cookie;
+	var c_start = c_value.indexOf(" " + c_name + "=");
+	if (c_start == -1)
+	  {
+	  c_start = c_value.indexOf(c_name + "=");
+	  }
+	if (c_start == -1)
+	  {
+	  c_value = null;
+	  }
+	else
+	  {
+	  c_start = c_value.indexOf("=", c_start) + 1;
+	  var c_end = c_value.indexOf(";", c_start);
+	  if (c_end == -1)
+	  {
+	c_end = c_value.length;
+	}
+	c_value = unescape(c_value.substring(c_start,c_end));
+	}
+	return c_value;
+}
+function checkCookie(){
+	var leido=getCookie("leido");
+	if (leido==null && leido!="true"){
+		document.getElementById('caja_abierta').style.display='';
+	}
 }
