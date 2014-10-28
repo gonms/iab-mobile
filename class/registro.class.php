@@ -15,7 +15,7 @@ class Registro{
         $cabeceras .= 'To: IAB <' . $email . '>' . "\r\n";
 
         // Enviarlo
-        $mensaje = utf8_decode('<html>
+        $mensaje = '<html>
                     <body>
                         <p>Se ha realizado el envío de estos datos a través de la web móvil:</p>
                         <p>Nombre: ' . $_POST['nombre'] . ' ' . $_POST['apellidos'] . '</p>
@@ -23,11 +23,11 @@ class Registro{
                         <p>Email: ' . $_POST['email'] . '</p>
                     </body>
                     </html>
-                    ');
+                    ';
 
         mail($email, utf8_decode("Envío datos Asociate web móvil"), $mensaje, $cabeceras);
 
-        $aDatos[] = "Los datos se han enviado correctamente!";
+        $aDatos['texto'] = "Los datos se han enviado correctamente!";
 
 		return $aDatos;
 	}
