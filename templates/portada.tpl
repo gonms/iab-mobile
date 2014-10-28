@@ -22,6 +22,7 @@
 		<h3><strong>{$item.titulo}</strong></h3>
 		<p>{$item.entradilla}...</p>
 		<a class="button" href="/iab-mobile{$item.enlace}">LEER MÁS</a>
+		<div class="limpia"></div>
 	</li>
 	{/foreach}
 	</ul>

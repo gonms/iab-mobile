@@ -19,14 +19,14 @@
         </div>
     </div>
 </footer>
-<div id="caja_abierta" class="oculto">
+<div id="caja_abierta">
 	<table style="width:100%;" align="center">
 	<tbody>
 	<tr>
-		<td valign="top" width="98%" align="left">
+		<td valign="top" width="90%" align="left">
 			<span style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;font-size:11px;color:#000;">Este sitio web utiliza cookies para obtener datos estadísticos de la navegación de sus usuarios. Si continúas navegando, consideramos que aceptas su uso. Si quieres, puedes cambiar tus preferencias o ampliar esta información <a style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;font-size:11px;color:#fff;text-decoration:none;" href="" onclick="document.getElementById('capa').style.display='';return false;">aquí.</a></span>
 		</td>
-		<td valign="top" width="2%" align="left">
+		<td valign="top" width="5%" align="left">
 			<a style="text-decoration:none;" href="" onclick="document.getElementById('caja_abierta').style.display='none';setCookie('leido','true',1);return false;"><img src="/iab-mobile/img/x.png" width="15" border="0"></a>
 		</td>
 	</tr>

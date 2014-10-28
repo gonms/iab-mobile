@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-10-27 16:01:08
+<?php /* Smarty version Smarty-3.1.15, created on 2014-10-28 13:35:04
          compiled from "templates/asociate.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:573510359544e348faa4688-33994308%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5e5df0bb938cd30e60d1786eee76985aaebd67b9' => 
     array (
       0 => 'templates/asociate.tpl',
-      1 => 1414422065,
+      1 => 1414499420,
       2 => 'file',
     ),
   ),
@@ -84,7 +84,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<a id="aAsociate" class="button" title="ASÓCIATE">ASÓCIATE</a>
 	
 	<div id="dAsociate" class="asociate oculto"> 
-		<form action="/backend.php" id="fForm" method="post">
+		<form action="/iab-mobile/asociados/registro" id="fForm" method="post">
 			<label for="nombre">Nombre</label>
            	<input type="text" name="nombre" id="nombre" size="27" />
            	
@@ -122,4 +122,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </section>
 
 <?php echo $_smarty_tpl->getSubTemplate ('footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 <?php }} ?>

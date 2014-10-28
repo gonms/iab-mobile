@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-10-27 15:58:59
+<?php /* Smarty version Smarty-3.1.15, created on 2014-10-28 17:15:18
          compiled from "templates/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:972096837544a082e1709c7-78710139%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9206ffe216f3f7c2e7655782292928f7d20e8be5' => 
     array (
       0 => 'templates/footer.tpl',
-      1 => 1414421843,
+      1 => 1414512846,
       2 => 'file',
     ),
   ),
@@ -40,7 +40,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </div>
     </div>
 </footer>
+<div id="caja_abierta">
+	<table style="width:100%;" align="center">
+	<tbody>
+	<tr>
+		<td valign="top" width="90%" align="left">
+			<span style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;font-size:11px;color:#000;">Este sitio web utiliza cookies para obtener datos estadísticos de la navegación de sus usuarios. Si continúas navegando, consideramos que aceptas su uso. Si quieres, puedes cambiar tus preferencias o ampliar esta información <a style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;font-size:11px;color:#fff;text-decoration:none;" href="" onclick="document.getElementById('capa').style.display='';return false;">aquí.</a></span>
+		</td>
+		<td valign="top" width="5%" align="left">
+			<a style="text-decoration:none;" href="" onclick="document.getElementById('caja_abierta').style.display='none';setCookie('leido','true',1);return false;"><img src="/iab-mobile/img/x.png" width="15" border="0"></a>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/iab-mobile/js/funciones.js"></script>
 </body>
-</html><?php }} ?>
+</html>
+<?php }} ?>

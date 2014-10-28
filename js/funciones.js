@@ -191,7 +191,13 @@ function getCookie(c_name){
 }
 function checkCookie(){
 	var leido=getCookie("leido");
-	if (leido==null && leido!="true"){
-		document.getElementById('caja_abierta').style.display='';
+	console.log("leido2: " + leido);	
+if (leido===null){
+console.log("entra");
+		$('#caja_abierta').show();
+	}
+	else
+	{
+		$('#caja_abierta').hide();
 	}
 }

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-10-27 11:54:28
+<?php /* Smarty version Smarty-3.1.15, created on 2014-10-28 17:20:47
          compiled from "templates/portada.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1913759332544a02c25feca8-37163335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '103db2e47c6a72304065a90a6a140f07359e52a4' => 
     array (
       0 => 'templates/portada.tpl',
-      1 => 1414407262,
+      1 => 1414513240,
       2 => 'file',
     ),
   ),
@@ -59,10 +59,12 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 ...</p>
 		<a class="button" href="/iab-mobile<?php echo $_smarty_tpl->tpl_vars['item']->value['enlace'];?>
 ">LEER MÁS</a>
+		<div class="limpia"></div>
 	</li>
 	<?php } ?>
 	</ul>
 </section>
 
 <?php echo $_smarty_tpl->getSubTemplate ('footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 <?php }} ?>
