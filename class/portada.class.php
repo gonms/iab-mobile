@@ -2,8 +2,6 @@
 
 class Portada{
     
-    var $template;
-    
     function Portada()
     {
     }

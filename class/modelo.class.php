@@ -48,6 +48,13 @@ class Modelo{
                 $aDatos = $item->getData();
                 $this->template = $item->getTemplate();
                 break;
+
+            case "registro": 
+                require_once("registro.class.php");
+                $item = new Registro();
+                $aDatos = $item->getData();
+                $this->template = $item->getTemplate();
+                break;
         }
         
         return $aDatos;

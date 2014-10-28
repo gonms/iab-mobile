@@ -3,6 +3,7 @@ RewriteBase /iab-mobile/
 RewriteRule ^/?$ dispatcher.php?seccion=portada [NC,L]
 RewriteRule ^category/noticias/?$ dispatcher.php?seccion=noticias [NC,L]
 RewriteRule ^asociados/?$ dispatcher.php?seccion=asociate [NC,L]
+RewriteRule ^asociados/registro/?$ dispatcher.php?seccion=registro [NC,L]
 RewriteRule ^noticias/(.*)/?$ dispatcher.php?seccion=noticias&id=$1 [NC,L]
 #RewriteRule ^category/belleza/?$ dispatcher.php?seccion=belleza [NC,L]
 #RewriteRule ^category/people/?$ dispatcher.php?seccion=people [NC,L]

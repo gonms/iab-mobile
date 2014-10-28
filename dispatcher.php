@@ -52,6 +52,10 @@ switch($_GET['seccion'])
 	case "noticias":
 		$smarty->assign("noticias",$data);
         break;
+
+    case "registro":
+        $smarty->assign("result",$data);
+        break;
 }
 
 $smarty->assign("seccion",$_GET['seccion']);

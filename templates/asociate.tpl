@@ -62,7 +62,7 @@
 	<a id="aAsociate" class="button" title="ASÓCIATE">ASÓCIATE</a>
 	
 	<div id="dAsociate" class="asociate oculto"> 
-		<form action="/backend.php" id="fForm" method="post">
+		<form action="/iab-mobile/asociados/registro" id="fForm" method="post">
 			<label for="nombre">Nombre</label>
            	<input type="text" name="nombre" id="nombre" size="27" />
            	
