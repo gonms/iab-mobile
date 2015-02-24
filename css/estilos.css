@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 *,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 
 img{max-width:100%}
@@ -13,11 +14,12 @@ section,header,footer {margin:2%;}
 .button:hover{background:#FF9900}
 .footer{width:100%;text-align:center;font-size:0.8em;padding:0;margin:2% 0;color:#777}
 .enlace{font-size:1em;color:#FEC627}
+.error {border:1px solid red;}
 
 
 /*MENU*/
 ul.nav {line-height:54px;}
-ul.nav li {display:inline-block;vertical-align:middle;height:54px;line-height:54px;}
+ul.nav li {float:left;vertical-align:middle;height:54px;line-height:54px;width:20%;}
 ul.nav li.borde {border-right:1px dotted #555;margin:10px 0;height:34px;line-height:34px;}
 ul.nav li a {padding:5px;color:#555555;font-size:0.8em}
 ul.nav li a:hover {background-color:#FEC627}
@@ -37,18 +39,23 @@ border-color: gray;
 .tdDisabled{padding:5px;border:1px solid #EEEEEE}
 .tdNormal{padding:5px;border:1px solid #000000;text-align:center;font-weight:bold;font-size:1.2em;color:#FEC627}
 .tdHoy{background-color:#CCCCCC;border:1px solid #000000;text-align:center;font-weight:bold;font-size:1.2em}
+.tdEvento{background-color:#FEC627;color:white;border:1px solid #000000;text-align:center;font-weight:bold;font-size:1.2em}
 .mes{text-align:center;font-size:1.5em;padding:5px 0;color:#FEC627;margin-top:5%;}
 .diasemana{padding:5px;color:#FFFFFF;background-color:#555;text-align:center}
 
 /*PORTADA*/
-.seccion-portada {margin:4% 0;font-size:1.7em;color:#555555}
+.seccion-portada {margin:4% 0;font-size:2em;color:#555555;font-family:"Lato",Arial,sans-serif;font-weight:300;}
 .seccion-portada span {color:#FEC627;}
-h2 {font-size: 1.5em;color:#555555;font-weight:bold;margin-top:5%;margin-bottom:1%;}
+h2 {font-size: 1.5em;color:#555555;font-weight:bold;margin-top:5%;margin-bottom:1%;font-family:"Lato",Arial,sans-serif;font-weight:300;}
 ul.noticias-portada li {border-bottom:1px solid #fec627;padding-bottom:5px;margin-bottom:10px;}
 ul.noticias-portada li h3 {color:#555555;margin-bottom:2%;}
+#dEvento {position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,0.9);display:none;padding:2%;border:1px solid #555555;}
+#dEvento > h2 {color:#FEC627;font-size:1.5em;margin:2% 0;}
+#dEvento > p {color:#555555;font-size:1.2em;margin:2% 0;}
+p.intro {margin-bottom:2%;}
 
 /*NOTICIAS*/
-.seccion-noticias {font-size:2em;color:#FFFFFF;margin:0;padding:10px 0 5px 5px;background-color:#FEC627;}
+.seccion-noticias {font-size:2em;color:#FFFFFF;margin:0;padding:10px 0 5px 5px;background-color:#FEC627;font-family:"Lato",Arial,sans-serif;font-weight:300;}
 ul.noticias > li {border-bottom:1px solid #fec627;padding-bottom:10px;margin-bottom:10px;}
 ul.noticias > li > h2 {font-size:1.5em;color:#555555;padding:4% 0 1% 0;font-weight:normal;}
 ul.noticias > li > p, p.fecha {font-size:0.7em;color:#777777;margin-bottom:1%;}
@@ -71,15 +78,33 @@ label {display:block;color:#06447D;font-size:1em;font-weight:bold;padding:1% 0;}
 .txtSubmitOk{font-size:medium;text-align:center;color:#555555}
 
 /*EVENTOS*/
-.selected{background-color:#FE9204;color:#FFFFFF}.selected:hover{background-color:#FEC627;}
-.divEventos{width:100%;color:#555555;font-size:small;padding:0;margin:0}
-.evento{padding:5px;margin:0}
-.tituloEventos{font-size:xx-large;color:#555555;margin:0;padding:0}
-.descripEvent{color:#777777;font-size:small}
-.fechaEventos{padding:0;font-size:large;margin:0}
-.tituloEvento{font-size:large;font-weight:bold;color:#555555;margin:0;padding:0}
-.linksEvents li{list-style-image:url(include/img/bullet-cats-list.gif)}
-.linksEvents a{font-size:small;color:#FF9900;padding-bottom:3px;text-decoration:none}
+.evento {border-bottom:1px solid #FEC627;padding-bottom:2%;}
+.evento > h1 {font-family:"Lato",Arial,sans-serif;margin:4% 0 2% 0;font-weight:bold;font-size:1.4em;}
+.evento > h2 {color:#555555;font-size:1.3em;margin:2% 0;}
+.evento > p {color:#555555;font-size:1em;margin:2% 0;}
+.evento span {margin:2% 0;display:block;}
+.evento img {margin:1% 0;display:block;}
+
+/* VIDEOS */
+.webtv {float:left;width:45%;margin-right:2%;}
+.webtv-texto {color:#555555;font-size:0.8em;font-weight:bold;padding-top:4%;}
+ul.videos {overflow:hidden;margin-top:3%;}
+ul.videos > li {float:left;width:49%;margin-right:1%;margin-bottom:2%;}
+ul.videos > li > img {display:block;margin-bottom:1%;}
+ul.videos > li > a {color:#FEC627;font-size:1em;text-decoration:underline;font-weight:bold;}
+ul.videos > li > p {color:#555555;font-size:1em;}
+
+/*CONTACTO*/
+ul.tweets li
+{
+	margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #CDCBCB;
+    font-size: 0.8em;
+    color: #767575;
+    background: url('/img/bullet-twitter.gif') no-repeat scroll left 4px transparent;
+    padding-left: 40px;
+}
 
 .cNaranjaBase{color:#FEC627}
 .cNaranjaBase2{color:#FE9204}

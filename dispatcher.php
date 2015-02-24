@@ -1,15 +1,15 @@
 <?php
 
-ini_set('display_errors',true);
-error_reporting(E_ALL);
+/*ini_set('display_errors',true);
+error_reporting(E_ALL);*/
 
-/*
+
 $seconds_to_cache = 300;
 $ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";
 header("Expires: $ts");
 header("Pragma: cache");
 header("Cache-Control: max-age=$seconds_to_cache");
-*/
+
 
 /* SMARTY SETUP */
 require('smarty/libs/Smarty.class.php');
@@ -42,11 +42,17 @@ $data = $modelo->getData();
 switch($_GET['seccion'])
 {
     case "asociate":
+    case "contacto":
         break;
 
     case "portada":
     	$smarty->assign("noticias",$data[0]);
     	$smarty->assign("calendario",$data[1]);
+    	$smarty->assign("tweets",$data[2]);
+        break;
+
+    case "eventos":
+        $smarty->assign("eventos",$data);
         break;
 	
 	case "noticias":
@@ -55,6 +61,10 @@ switch($_GET['seccion'])
 
     case "registro":
         $smarty->assign("result",$data);
+        break;
+    
+    case "videos":
+        $smarty->assign("videos",$data);
         break;
 }
 

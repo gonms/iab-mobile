@@ -10,7 +10,7 @@
 		{if $item.imagen != ""}
 		<img src="{$item.imagen}" />
 		{/if}
-		<h3>{$item.entradilla}</h3>
+		<h3>{$item.entradilla}...</h3>
 		<a class="button" href="{$item.enlace}">LEER MÁS</a>
 	</li>
 	{/foreach}
